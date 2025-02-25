@@ -49,6 +49,7 @@ func (c *ChatbotClient) AskQuestions(questions []string) ([]schemas.VoiceFlowExc
 }
 
 func (c *ChatbotClient) addQuestion(q string) (string, error) {
+	log.Println("Asking question ", q, " ....")
 	payload, _ := json.Marshal(schemas.VoiceFlowQuestion{
 		Action: schemas.VoiceFlowAction{
 			Type:    schemas.ActionText,

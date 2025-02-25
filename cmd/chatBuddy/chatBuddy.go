@@ -17,10 +17,8 @@ func main() {
 		return
 	}
 
-	filename := flag.String("file", "ChatbotQs,xlsx", "Name of the file (.xlsx)")
+	filename := flag.String("file", "ChatbotQs.xlsx", "Name of the file (.xlsx)")
 	flag.Parse()
-
-	log.Println(*filename)
 
 	questions, err := voiceflow.ExtractQuestions(*filename)
 	if err != nil {
